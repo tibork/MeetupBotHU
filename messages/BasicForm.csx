@@ -1,13 +1,19 @@
 using System;
 using Microsoft.Bot.Builder.FormFlow;
 
+/*
 public enum CarOptions { Convertible = 1, SUV, EV };
 public enum ColorOptions { Red = 1, White, Blue };
+*/
+public enum PreferredTopicOptions { Kultúra = 1, Sport, Szórakozás, Politika, Technológia, Üzlet };
+public enum PreferredDayOptions { Hétfő = 1, Kedd, Szerda, Csütörtök, Péntek, Szombat, Vasárnap };
+public enum PreferredTimeOfDayOptions { Reggel = 1, Napközben, Este };
 
 // For more information about this template visit http://aka.ms/azurebots-csharp-form
 [Serializable]
 public class BasicForm
 {
+    /*
     [Prompt("Hi! What is your {&}?")]
     public string Name { get; set; }
 
@@ -16,6 +22,19 @@ public class BasicForm
 
     [Prompt("Please select your favorite {&} {||}")]
     public ColorOptions Color { get; set; }
+    */
+
+    [Prompt("Helló! Mi a neved?")]
+    public string Name { get; set; }
+
+    [Prompt("Melyik téma érdekel a legjobban?")]
+    public string PreferredTopic { get; set; }
+
+    [Prompt("Melyik nap a legalkalmasabb?")]
+    public string PreferredDay { get; set; }
+
+    [Prompt("Melyik napszakban érsz rá leginkább?")]
+    public string PreferredTimeOfDay { get; set; }
 
     public static IForm<BasicForm> BuildForm()
     {
