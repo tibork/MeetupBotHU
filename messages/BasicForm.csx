@@ -28,13 +28,13 @@ public class BasicForm
     public string Name { get; set; }
 
     [Prompt("Melyik téma érdekel a legjobban?")]
-    public string PreferredTopic { get; set; }
+    public PreferredTopicOptions PreferredTopic { get; set; }
 
     [Prompt("Melyik nap a legalkalmasabb?")]
-    public string PreferredDay { get; set; }
+    public PreferredDayOptions PreferredDay { get; set; }
 
     [Prompt("Melyik napszakban érsz rá leginkább?")]
-    public string PreferredTimeOfDay { get; set; }
+    public PreferredTimeOfDayOptions PreferredTimeOfDay { get; set; }
 
     public static IForm<BasicForm> BuildForm()
     {
